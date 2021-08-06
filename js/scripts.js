@@ -54,6 +54,16 @@ jQuery(document).ready(function($) {
 		}).children( window.location.hash ? 'a[href="' + window.location.hash + '"]' : 'a:first' ).trigger('click');
 
 	})();
+
+/*  Disable browser tooltips (to use CSS tooltips)
+/* ----------------------------------------------- */	
+	  $(".social-tooltip").hover(function(){
+	    $(this).attr("tooltip-data", $(this).attr("title"));
+	    $(this).removeAttr("title");
+	  }, function(){
+	    $(this).attr("title", $(this).attr("tooltip-data"));
+	    $(this).removeAttr("tooltip-data");
+	  });
 	
 /*  Comments / pingbacks tabs
 /* ------------------------------------ */	
